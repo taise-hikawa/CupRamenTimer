@@ -15,6 +15,7 @@
 		D31E4B8F24B346AC00ABAC1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D31E4B8D24B346AC00ABAC1D /* LaunchScreen.storyboard */; };
 		D31E4B9A24B346AC00ABAC1D /* CupRamenTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E4B9924B346AC00ABAC1D /* CupRamenTimerTests.swift */; };
 		D31E4BA524B346AC00ABAC1D /* CupRamenTimerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D31E4BA424B346AC00ABAC1D /* CupRamenTimerUITests.swift */; };
+		D374AF3124BF200100D785B2 /* TimerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D374AF3024BF200100D785B2 /* TimerPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		D31E4BA024B346AC00ABAC1D /* CupRamenTimerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CupRamenTimerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D31E4BA424B346AC00ABAC1D /* CupRamenTimerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CupRamenTimerUITests.swift; sourceTree = "<group>"; };
 		D31E4BA624B346AC00ABAC1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D374AF3024BF200100D785B2 /* TimerPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				D31E4B8424B346A100ABAC1D /* SceneDelegate.swift */,
 				D31E4B8624B346A100ABAC1D /* ViewController.swift */,
 				D31E4B8824B346A100ABAC1D /* Main.storyboard */,
+				D374AF3024BF200100D785B2 /* TimerPageViewController.swift */,
 				D31E4B8B24B346AC00ABAC1D /* Assets.xcassets */,
 				D31E4B8D24B346AC00ABAC1D /* LaunchScreen.storyboard */,
 				D31E4B9024B346AC00ABAC1D /* Info.plist */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D31E4B8724B346A100ABAC1D /* ViewController.swift in Sources */,
+				D374AF3124BF200100D785B2 /* TimerPageViewController.swift in Sources */,
 				D31E4B8324B346A100ABAC1D /* AppDelegate.swift in Sources */,
 				D31E4B8524B346A100ABAC1D /* SceneDelegate.swift in Sources */,
 			);

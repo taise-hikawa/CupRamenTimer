@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
+    //ボタンとテキストを５つずつ定義
     let btn1 = UIButton()
     let btn2 = UIButton()
     let btn3 = UIButton()
@@ -20,11 +20,15 @@ class ViewController: UIViewController {
     let text3 = UILabel()
     let text4 = UILabel()
     let text5 = UILabel()
+    //テキストのフォントサイズを定義
     let fontsize = 20
+    //settingKeyを設定
+    let settingKey = "timer_value"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.view.backgroundColor? = UIColor(patternImage: UIImage(named: "mokume")!)
         //ボタン2の設定
         self.view.addSubview(btn2)
         btn2.translatesAutoresizingMaskIntoConstraints = false
@@ -34,7 +38,9 @@ class ViewController: UIViewController {
         btn2.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.25).isActive = true
         btn2.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25).isActive = true
         btn2.imageView?.contentMode = .scaleAspectFit
+        btn2.addTarget(self, action: #selector(ViewController.btntapped2(_:)), for: UIControl.Event.touchUpInside)
         
+        //テキスト２の設定
         self.view.addSubview(text2)
         text2.translatesAutoresizingMaskIntoConstraints = false
         text2.text = "赤いきつね"
@@ -55,7 +61,9 @@ class ViewController: UIViewController {
         btn1.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.25).isActive = true
         btn1.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25).isActive = true
         btn1.imageView?.contentMode = .scaleAspectFit
+        btn1.addTarget(self, action: #selector(ViewController.btntapped1(_:)), for: UIControl.Event.touchUpInside)
         
+        //テキスト1の設定
         self.view.addSubview(text1)
         text1.translatesAutoresizingMaskIntoConstraints = false
         text1.text = "カップヌードル"
@@ -66,9 +74,7 @@ class ViewController: UIViewController {
         text1.heightAnchor.constraint(equalTo: btn1.heightAnchor, multiplier: 0.2).isActive = true
         text1.font = text2.font.withSize(CGFloat(fontsize))
         text1.textAlignment = NSTextAlignment.center
-        
-        
-
+    
 
         //ボタン3の設定
         self.view.addSubview(btn3)
@@ -79,7 +85,9 @@ class ViewController: UIViewController {
         btn3.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.25).isActive = true
         btn3.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25).isActive = true
         btn3.imageView?.contentMode = .scaleAspectFit
+        btn3.addTarget(self, action: #selector(ViewController.btntapped3(_:)), for: UIControl.Event.touchUpInside)
         
+        //テキスト3の設定
         self.view.addSubview(text3)
         text3.translatesAutoresizingMaskIntoConstraints = false
         text3.text = "UFO"
@@ -100,7 +108,9 @@ class ViewController: UIViewController {
         btn5.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.25).isActive = true
         btn5.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25).isActive = true
         btn5.imageView?.contentMode = .scaleAspectFit
+        btn5.addTarget(self, action: #selector(ViewController.btntapped5(_:)), for: UIControl.Event.touchUpInside)
         
+        //テキスト5の設定
         self.view.addSubview(text5)
         text5.translatesAutoresizingMaskIntoConstraints = false
         text5.text = "蒙古タンメン"
@@ -121,7 +131,9 @@ class ViewController: UIViewController {
         btn4.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.25).isActive = true
         btn4.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.25).isActive = true
         btn4.imageView?.contentMode = .scaleAspectFit
+        btn4.addTarget(self, action: #selector(ViewController.btntapped4(_:)), for: UIControl.Event.touchUpInside)
         
+        //テキスト4の設定
         self.view.addSubview(text4)
         text4.translatesAutoresizingMaskIntoConstraints = false
         text4.text = "ぶぶか"
@@ -134,9 +146,50 @@ class ViewController: UIViewController {
         text4.textAlignment = NSTextAlignment.center
 
 
-
-
     }
+    //ボタンを押した時の反応をそれぞれのボタンで設定
+    @objc func btntapped1(_ sender : Any) {
+        //UserDefaultsの設定
+        let settings = UserDefaults.standard
+        settings.setValue(180, forKey: settingKey)
+        settings.synchronize()
+        //segueでページ遷移
+        self.performSegue(withIdentifier: "backToRamen", sender: self)
+    }
+    
+    @objc func btntapped2(_ sender : Any) {
+        //UserDefaultsの設定
+        let settings = UserDefaults.standard
+        settings.setValue(300, forKey: settingKey)
+        settings.synchronize()
+        self.performSegue(withIdentifier: "backToRamen", sender: self)
+    }
+    
+    @objc func btntapped3(_ sender : Any) {
+        //UserDefaultsの設定
+        let settings = UserDefaults.standard
+        settings.setValue(300, forKey: settingKey)
+        settings.synchronize()
+        self.performSegue(withIdentifier: "backToRamen", sender: self)
+    }
+    
+    @objc func btntapped4(_ sender : Any) {
+        //UserDefaultsの設定
+        let settings = UserDefaults.standard
+        settings.setValue(180, forKey: settingKey)
+        settings.synchronize()
+        self.performSegue(withIdentifier: "backToRamen", sender: self)
+    }
+    
+    @objc func btntapped5(_ sender : Any) {
+        //UserDefaultsの設定
+        let settings = UserDefaults.standard
+        settings.setValue(300, forKey: settingKey)
+        settings.synchronize()
+        self.performSegue(withIdentifier: "backToRamen", sender: self)
+    }
+    
+    
 
 
 }
